@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/uikit-rtl.min.css">
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css">
+    <link href="http://allfont.es/allfont.css?fonts=dosis-medium" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css'>
+</head>
+<style>
+     .fondo-recomendados{
+        background:#eaeaea;
+    }
+    .font-size12{
+        font-size: 1.2em;
+    }
+    .carousel-wrap {
+  margin: 40px auto;
+  padding: 0 5%;
+  width: 70%;
+  position: relative;
+}
+
+/* fix blank or flashing items on carousel */
+.owl-carousel .item {
+  position: relative;
+  z-index: 100; 
+  -webkit-backface-visibility: hidden; 
+}
+
+/* end fix */
+.owl-nav > div {
+  margin-top: -26px;
+  position: absolute;
+  top: 50%;
+  color: #cdcbcd;
+}
+
+.owl-nav i {
+  font-size: 52px;
+}
+
+.owl-nav .owl-prev {
+  left: -30px;
+}
+
+.owl-nav .owl-next {
+  right: -30px;
+}
+    .minhv{
+       min-height: 100vh; 
+       position: relative;
+       overflow: hidden;
+    }
+    .fondo {
+    min-height: 100vh;
+    background-image: url(bg.png);
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.w50 {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 11em;
+}
+.w70 {
+    flex-basis: 70%;
+    position: relative;
+}
+.w30{
+    overflow: hidden;
+    flex-basis: 30%;
+    height: 100vh;
+}
+.text-white{
+    color: white;
+    font-weight: bold;
+}
+.background-yellow:disabled {
+    background: yellow;
+    width: 300px;
+    color: black;
+    text-align: right;
+}
+img.mover {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.uk-form-controls {
+    text-align: right;
+}
+.text-black{
+    color: black;
+}
+.uk-padding-small {
+    padding: 15px;
+}
+a.uk-button.uk-button-default {
+    font-family: 'Dosis Medium', arial;
+    padding: 0 10px;
+}
+.btn-red {
+    color: white;
+    background: red;
+}
+.text-product {
+    font-family: 'Dosis Medium', arial;
+    color: black;
+    font-size: 1.2em;
+    margin-left: 18px;
+    padding: 0;
+    margin-bottom: 2px;
+}
+.sale-perc {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    display: inline-block;
+    width: auto;
+    height: 30px;
+    line-height: 32px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    padding: 0 15px;
+    top: 8px;
+    right: 5px;
+}
+.sale-perc:before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    z-index: 1;
+    border-radius: 10px;
+}
+.sale-perc:after {
+    content: " ";
+    height: 22px;
+    width: 22px;
+    top: 4px;
+    left: -9px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.sale-perc, .sale-perc:after {
+    background: red;
+    border-radius: 4px;
+    position: absolute;
+}
+span.text-precio {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 15px;
+}
+.btn-blue:hover{
+    background: #1c58ac;
+    border: 1px solid #1c58ac;
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    color:white;
+}
+.owl-carousel .owl-item img{
+    padding: 2em;
+}
+span.text-precio {
+    font-weight: bold;
+    font-size: 0.85em;
+}
+.item {
+    box-shadow: 1px -2px 10px black;
+    margin: 3em;
+    padding: 0.58em;
+}
+@media screen and (max-width:950px){
+    .w70{
+        flex-basis: 60%;
+    }
+      .w30{
+        flex-basis: 40%;
+    }
+}
+@media screen and (max-width:748px){
+    .minhv{
+    background: #5fc6e0;
+    }
+    .w70{
+        flex-basis: 100%;
+    }
+      .w30{
+        display: none;;
+    }
+    .w50 {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+    img.mover{
+        display: none;
+    }
+}
+.mobile-texxt{
+    width: 600px;
+}
+.backgroundce{
+    background: #5fc6e0;
+}
+@media screen and (min-width:748px){
+    .fondo-recomendados{
+        display: none
+    }
+}
+</style>
+<body>
+    <section class="uk-flex minhv uk-form-stacked">
+        <article class="fondo w70">
+            <div class="w50">
+                <img src="texto-principal.png" alt="" width="500px">
+                <form>
+                    <div class="uk-margin">
+                        <label class="uk-form-label text-white" for="form-stacked-text">DISTANCIA (KILÓMETROS)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input monto" id="valor1" type="text" onkeyup="sumar();">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label text-white" for="form-stacked-text">TIEMPO (MINUTOS)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input monto2" type="text" id="valor2" onkeyup="sumar2();">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label text-white uk-text-right" for="form-stacked-text">CALORIAS QUEMADAS</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input background-yellow" disabled="disabled" type="text" id="valor3" >
+                        </div>
+                        <p class="text-white">*Esta calculadora no es 100% precisa.</p>
+                    </div>
+                    <div class="logos-mon">
+                        <img src="logo1.png" alt="" width="120px">
+                        <img src="logo2.png" alt="" width="120px">
+                    </div>
+                </form>
+                <img src="texto-productos-recomendados.png" alt="" class="mover" width="100px">
+            </div>
+        </article>
+        <article class="w30">
+            <div class="slider">
+                <div>
+                    <div class="item">
+                        <img src="https://www.monark.com.pe/wp-content/uploads/bicicleta-eliptica-e-1020-600x600.jpg">
+                        <p class="text-product">ELÍPTICA MONARK - E-1020</p> 
+                        <span class="text-precio">S/999.00 inc. IGV</span>
+                        <div class="uk-padding-small">
+                          <a href="https://www.monark.com.pe/producto/eliptica-air-cross-trainer-monark-e-1020/" class="text-black uk-button uk-button-default btn-blue">VER DETALLE</a>
+                          <a href="https://www.monark.com.pe/producto/eliptica-air-cross-trainer-monark-e-1020/" class="uk-button uk-button-default btn-red btn-blue">COMPRAR</a>
+                        </div>
+                      </div>
+                </div>
+                <div>
+                    <div class="item">
+                        <img src="https://www.monark.com.pe/wp-content/uploads/eliptica-trainer-e-401-monark-fitness-600x600.jpg">
+                        <p class="text-product">ELÍPTICA MONARK - E-401</p>
+                        <span class="text-precio"><del> S/1,099.00</del> S/999.00 inc. IGV</span>
+                        <div class="sale-perc">-9%</div>
+                        <div class="uk-padding-small">
+                          <a href="https://www.monark.com.pe/producto/eliptica-trainer-monark-e-401-peru/" class="text-black uk-button uk-button-default btn-blue">VER DETALLE</a>
+                          <a href="https://www.monark.com.pe/producto/eliptica-trainer-monark-e-401-peru/" class="uk-button uk-button-default btn-red btn-blue">COMPRAR</a>
+                      </div>
+                      </div>
+                </div>
+                <div>
+                    <div class="item">
+                        <img src="https://www.monark.com.pe/wp-content/uploads/eliptica-e5731-prestige-600x600.png">
+                        <p class="text-product">ELÍPTICA PRESTIGE- E-5731</p> 
+                        <span class="text-precio"><del> S/2,899.00</del> S/2,499.00 inc. IGV</span>
+                        <div class="sale-perc">-14%</div>
+                        <div class="uk-padding-small">
+                              <a href="https://www.monark.com.pe/producto/eliptica-prestige-e5731-monark/" class="text-black uk-button uk-button-default btn-blue">VER DETALLE</a>
+                              <a href="https://www.monark.com.pe/producto/eliptica-prestige-e5731-monark/" class="uk-button uk-button-default btn-red btn-blue">COMPRAR</a>
+                      </div>
+                      </div>
+                </div>
+                <div>
+                    <div class="item">
+                        <img src="https://www.monark.com.pe/wp-content/uploads/t306-B-min-600x600.png">
+                        <p class="text-product">TROTADORA MONARK- T306B</p>
+                        <span class="text-precio"><del> S/3,199.00</del> S/2,699.00 inc. IGV</span>
+                        <div class="sale-perc">-16%</div>
+                        <div class="uk-padding-small">
+                          <a href="https://www.monark.com.pe/producto/trotadora-monark-t306b/" class="text-black uk-button uk-button-default btn-blue">VER DETALLE</a>
+                          <a href="https://www.monark.com.pe/producto/trotadora-monark-t306b/" class="uk-button uk-button-default btn-red btn-blue">COMPRAR</a>
+                      </div>
+                      </div>
+                </div>
+                <div>
+                    <div class="item">
+                        <img src="https://www.monark.com.pe/wp-content/uploads/t5152-foto-nueva-3-600x600.jpg">
+                        <p class="text-product">TROTADORA PRESTIGE - T5152</p>
+                        <span class="text-precio">S/5,899.00 inc. IGV</span>
+                        <div class="uk-padding-small">
+                              <a href="hhttps://www.monark.com.pe/producto/trotadora-prestige-monark-t5152/" class="text-black uk-button uk-button-default btn-blue">VER DETALLE</a>
+                              <a href="https://www.monark.com.pe/producto/trotadora-prestige-monark-t5152/" class="uk-button uk-button-default btn-red btn-blue">COMPRAR</a>
+                       </div>
+                  </div>    
+                </div>
+                <div>
+                    
+                </div>
+              </div>
+        </article>
+    </section>
+    <section class="fondo-recomendados">
+        <div class="uk-flex uk-flex-center backgroundce">
+            <img src="texto-productos-recomendados2.png" alt="" class="mobile-texxt">
+        </div>
+        <div class="carousel-wrap">
+         <div class="owl-carousel">
+           <div class="item">
+               <img src="https://www.monark.com.pe/wp-content/uploads/bicicleta-eliptica-e-1020-600x600.jpg">
+               <p class="text-product">ELÍPTICA MONARK - E-1020</p> 
+               <span class="text-precio">S/999.00 inc. IGV</span>
+               <div class="uk-padding-small">
+                 <a href="https://www.monark.com.pe/producto/eliptica-air-cross-trainer-monark-e-1020/" class="text-black uk-button uk-button-default btn-blue">VER DETALLE</a>
+                 <a href="https://www.monark.com.pe/producto/eliptica-air-cross-trainer-monark-e-1020/" class="uk-button uk-button-default btn-red btn-blue">COMPRAR</a>
+               </div>
+             </div>
+           <div class="item">
+               <img src="https://www.monark.com.pe/wp-content/uploads/eliptica-trainer-e-401-monark-fitness-600x600.jpg">
+               <p class="text-product">ELÍPTICA MONARK - E-401</p>
+               <span class="text-precio"><del> S/1,099.00</del> S/999.00 inc. IGV</span>
+               <div class="sale-perc">-9%</div>
+               <div class="uk-padding-small">
+                 <a href="https://www.monark.com.pe/producto/eliptica-trainer-monark-e-401-peru/" class="text-black uk-button uk-button-default btn-blue">VER DETALLE</a>
+                 <a href="https://www.monark.com.pe/producto/eliptica-trainer-monark-e-401-peru/" class="uk-button uk-button-default btn-red btn-blue">COMPRAR</a>
+             </div>
+             </div>
+           <div class="item">
+               <img src="https://www.monark.com.pe/wp-content/uploads/eliptica-e5731-prestige-600x600.png">
+               <p class="text-product">ELÍPTICA PRESTIGE- E-5731</p> 
+               <span class="text-precio"><del> S/2,899.00</del> S/2,499.00 inc. IGV</span>
+               <div class="sale-perc">-14%</div>
+               <div class="uk-padding-small">
+                     <a href="https://www.monark.com.pe/producto/eliptica-prestige-e5731-monark/" class="text-black uk-button uk-button-default btn-blue">VER DETALLE</a>
+                     <a href="https://www.monark.com.pe/producto/eliptica-prestige-e5731-monark/" class="uk-button uk-button-default btn-red btn-blue">COMPRAR</a>
+             </div>
+             </div>
+           <div class="item">
+               <img src="https://www.monark.com.pe/wp-content/uploads/eliptica-6701-600x600.png">
+               <p class="text-product">ELÍPTICA PRESTIGE - E-6701</p>
+               <span class="text-precio">S/3,999.00 inc. IGV</span>
+               <div class="uk-padding-small">
+                     <a href="https://www.monark.com.pe/producto/eliptica-prestige-e6701-monark/" class="text-black uk-button uk-button-default btn-blue">VER DETALLE</a>
+                     <a href="https://www.monark.com.pe/producto/eliptica-prestige-e6701-monark/" class="uk-button uk-button-default btn-red btn-blue">COMPRAR</a>
+              </div>
+         </div>
+         </div>
+       </div>
+     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+    <script async src="//jsfiddle.net/devpull/q827wb0a/embed/"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js'></script>
+    <script src='https://use.fontawesome.com/826a7e3dce.js'></script>
+    <script>
+        $(document).ready(function() {
+  // slick carousel
+  $('.slider').slick({
+    dots: true,
+    vertical: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    verticalSwiping: true,
+    autoplay: true,
+  autoplaySpeed: 2000,
+  });
+});
+    </script>
+     <script>
+        $('.owl-carousel').owlCarousel({
+  loop: true,
+  margin: 35,
+  nav: true,
+  navText: [
+    "<i class='fa fa-caret-left'></i>",
+    "<i class='fa fa-caret-right'></i>"
+  ],
+  autoplay: true,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1
+    },
+    720: {
+      items: 2
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
+    </script>
+    <script>
+function sumar() {
+
+var valor1 = document.getElementById('valor1').value;
+document.getElementById('valor2').value = valor1;
+document.getElementById('valor3').value = valor1*10;
+
+}
+
+function sumar2() {
+
+var valor2 = document.getElementById('valor2').value;
+document.getElementById('valor1').value = valor2;
+document.getElementById('valor3').value = valor2*10;
+
+}
+    </script>
+</body>
+</html>
